@@ -48,7 +48,7 @@ body {
 
 // End example from Shane
 
-@mixin button-gold ($width, $height){
+@mixin button-go ($width, $height){
   text-align: center;
   border: 1px solid rgb(195, 143, 38);
   width: $width;
@@ -70,6 +70,7 @@ body {
   background: -o-linear-gradient(top, #fcd833 0%,#fca52e 100%); /* Opera 11.10+ */
   background: -ms-linear-gradient(top, #fcd833 0%,#fca52e 100%); /* IE10+ */
   background: linear-gradient(to bottom, #fcd833 0%,#fca52e 100%); /* W3C */
+  
 
   &:hover {
     border: 1px solid rgb(195, 143, 38);
@@ -101,8 +102,9 @@ body {
   }
 }
 
-.cta-button {
-  @include button-gold (600px, 120px)
-}
 
+
+.cta-button-go {
+  @include button-go (600px, 120px);
+}
 
