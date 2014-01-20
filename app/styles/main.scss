@@ -1,0 +1,108 @@
+$font-stack:    'Droid Serif', serif;
+$primary-color: #333;
+$highlight-color: FFCA2B;
+
+body {
+    background: #fafafa;
+    font: 100% $font-stack;
+    color: $primary-color;
+}
+
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 700px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 60px;
+    h1 {
+        font-size: 60px;
+        line-height: 1;
+        letter-spacing: -1px;
+    }
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+
+// Example from Shane
+@mixin dan ($color, $border, $width) {
+  width: $width;
+  height:200px;
+  background-color: $color;
+  border: $border;
+
+}
+
+.box-one {
+  @include dan (green, 3px solid gray, 300px)
+}
+
+// End example from Shane
+
+@mixin button-gold ($width, $height){
+  text-align: center;
+  border: 1px solid rgb(195, 143, 38);
+  width: $width;
+  height: $height;
+  position: relative;
+  color: white;
+  font-size: $height * .6;
+  line-height: $height;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  padding: $height *.3;
+  text-shadow: 0 1px 1px rgb(113, 86, 30);
+  box-shadow: inset 0 1px 1px #fff,
+                    0 1px 3px gray;
+  background: #fcd833; /* Old browsers */
+  background: -moz-linear-gradient(top, #fcd833 0%, #fca52e 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcd833), color-stop(100%,#fca52e)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #fcd833 0%,#fca52e 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #fcd833 0%,#fca52e 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #fcd833 0%,#fca52e 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #fcd833 0%,#fca52e 100%); /* W3C */
+
+  &:hover {
+    border: 1px solid rgb(195, 143, 38);
+    text-shadow: 0 1px 1px rgb(113, 86, 30);
+    box-shadow: inset 0px 1px 1px #fff,
+                      0 1px 3px gray;
+    background: #fcd833; /* Old browsers */
+    background: -moz-linear-gradient(top, #fca52e 0%, #fcd833 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fca52e), color-stop(100%,#fcd833)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fca52e 0%,#fcd833 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fca52e 0%,#fcd833 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #fca52e 0%,#fcd833 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #fca52e 0%,#fcd833 100%); /* W3C */
+  }
+
+  &:active {
+    border: 1px solid rgb(195, 143, 38);
+    font-size: $height * .6 - 1px;
+    text-shadow: 0 1px 1px rgb(113, 86, 30);
+    box-shadow: inset 0px 1px 1px #7B7474;
+    background: #fcd833; /* Old browsers */
+    background: -moz-linear-gradient(top, #fca52e 0%, #fcd833 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fca52e), color-stop(100%,#fcd833)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fca52e 0%,#fcd833 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fca52e 0%,#fcd833 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #fca52e 0%,#fcd833 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #fca52e 0%,#fcd833 100%); /* W3C */
+
+  }
+}
+
+.cta-button {
+  @include button-gold (600px, 120px)
+}
+
+
