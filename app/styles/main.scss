@@ -59,21 +59,6 @@ body {
   text-align: center;
 }
 
-// Example from Shane
-@mixin dan ($color, $border, $width) {
-  width: $width;
-  height:200px;
-  background-color: $color;
-  border: $border;
-
-}
-
-.box-one {
-  @include dan (green, 3px solid gray, 300px)
-}
-
-// End example from Shane
-
 // Begin Mixin's
 // Mixin 1
 @mixin button-go ($width, $height, $background){
