@@ -80,59 +80,64 @@
           <div class="code">
             <h3>css</h3>
             <xmp class = "css">
+              //Begin Mixin 1
               @mixin button-go ($width, $height, $background){
-  text-align: center;
-  border: 1px solid rgb(195, 143, 38);
-  width: $width;
-  height: $height;
-  position: relative;
-  color: white;
-  margin-bottom: 20px;
-  font-size: $height * .6;
-  line-height: $height;
-  letter-spacing: 1px;
-  border-radius: 6px;
-  padding: $height *.3;
-  text-shadow: 0 1px 1px darken($background, 30%);
-  box-shadow: inset 0 1px 1px #fff,
-                    0 1px 3px gray;
-  background: $background; /* Old browsers */
-  @include background-image(linear-gradient(lighten($background, 10%), 
-  darken($background, 10%))); 
+                text-align: center;
+                border: 1px solid rgb(195, 143, 38);
+                width: $width;
+                height: $height;
+                position: relative;
+                color: white;
+                margin-bottom: 20px;
+                font-size: $height * .6;
+                line-height: $height;
+                letter-spacing: 1px;
+                border-radius: 6px;
+                padding: $height *.3;
+                text-shadow: 0 1px 1px darken($background, 30%);
+                box-shadow: inset 0 1px 1px #fff,
+                                  0 1px 3px gray;
+                background: $background; /* Old browsers */
+                @include background-image(linear-gradient
+                (lighten($background, 10%), 
+                darken($background, 10%))); 
 
-  &:hover {
-    border: 1px solid rgb(195, 143, 38);
-    text-shadow: 0 1px 1px darken($background, 30%);
-    box-shadow: inset 0px 1px 1px #fff,
-                      0 1px 3px gray;
-    background: $background; /* Old browsers */
-  @include background-image(linear-gradient(darken($background, 10%), 
-  lighten($background, 10%))); 
-  }
+                &:hover {
+                  border: 1px solid rgb(195, 143, 38);
+                  text-shadow: 0 1px 1px darken($background, 30%);
+                  box-shadow: inset 0px 1px 1px #fff,
+                                    0 1px 3px gray;
+                  background: $background; /* Old browsers */
+                @include background-image(linear-gradient
+                (darken($background, 10%), 
+                lighten($background, 10%))); 
+                }
 
-  &:active {
-    border: 1px solid rgb(195, 143, 38);
-    font-size: $height * .6 - 1px;
-    text-shadow: 0 1px 1px darken($background, 30%);
-    box-shadow: inset 0px 1px 1px #7B7474;
-    background: $background; /* Old browsers */
-  @include background-image(linear-gradient(darken($background, 10%), 
-  lighten($background, 10%))); 
-  }
-}
+                &:active {
+                  border: 1px solid rgb(195, 143, 38);
+                  font-size: $height * .6 - 1px;
+                  text-shadow: 0 1px 1px darken($background, 30%);
+                  box-shadow: inset 0px 1px 1px #7B7474;
+                  background: $background; /* Old browsers */
+                @include background-image(linear-gradient
+                (darken($background, 10%), 
+                lighten($background, 10%))); 
+                }
+              }
 
+              //End Mixin 1
+              //Begin styling Mixin 1
+              .cta-button-go {
+                @include button-go (400px, 50px, green);
+              }
 
-.cta-button-go {
-  @include button-go (400px, 50px, green);
-}
+              .cta-button-slow {
+                @include button-go (400px, 50px, yellow);
+              }
 
-.cta-button-slow {
-  @include button-go (400px, 50px, yellow);
-}
-
-.cta-button-stop {
-  @include button-go (400px, 50px, red);
-}
+              .cta-button-stop {
+                @include button-go (400px, 50px, red);
+              }
 
             </xmp>
           </div>
@@ -190,29 +195,33 @@
           <div class="code">
             <h3>css</h3>
             <xmp class="css">
+            // Begin Mixin 2
             @mixin avatar($image) {
-            background: $image; 
-            width: 220px;
-            margin: 20px;
-            height: 220px;
-            position: relative;
-            display: inline-block;
-            border-radius: 50%;
-            box-shadow: inset 0px 0px 0px 16px rgb(62, 123, 163),
-                    0px 1px 2px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease-in-out;
+              background: $image; 
+              width: 220px;
+              margin: 20px;
+              height: 220px;
+              position: relative;
+              display: inline-block;
+              border-radius: 50%;
+              box-shadow: inset 0px 0px 0px 16px rgb(62, 123, 163),
+                                0px 1px 2px rgba(0, 0, 0, 0.1);
+              transition: all 0.4s ease-in-out;
             }
 
+            // End Mixin 2
+            // Begin styling Mixin2
+
             .circle-avatar-damascus {
-            @include avatar(url(img/sillyface.jpg) no-repeat center center)
+              @include avatar(url(img/sillyface.jpg) no-repeat center center)
             }
 
             .circle-avatar-annie {
-            @include avatar(url(img/annie.jpg)no-repeat center center)
+              @include avatar(url(img/annie.jpg)no-repeat center center)
             }
 
             .circle-avatar-rylee {
-            @include avatar(url(img/rylee.jpg)no-repeat center center)
+              @include avatar(url(img/rylee.jpg)no-repeat center center)
             }
             </xmp>
           </div>
@@ -222,15 +231,69 @@
         <div class="hero-unit">
           <div class="mixin-demo">
             <h3>Mixin 3</h3>
+            <div class="square-container-lg">
+              <span>Lg</span>
+            </div>
+            <div class="square-container-md">
+              <span>Med</span>
+            </div>
+            <div class="square-container-sm">
+              <span>Sm</span>
+            </div>
           </div>
           <div class="code">
             <h3>html</h3>
             <xmp class ="html">
+            <h3>Mixin 3</h3>
+            <div class="square-container-lg">
+              <span>Lg</span>
+            </div>
+            <div class="square-container-md">
+              <span>Med</span>
+            </div>
+            <div class="square-container-sm">
+              <span>Sm</span>
+            </div>
             </xmp>
           </div>
           <div class="code">
             <h3>css</h3>
             <xmp class="css">
+              // Begin Mixin 3
+              @mixin container-sq ($width, $back-color) {
+                width: $width;
+                margin: 20px auto;
+                height: $width;
+                font-size: $width * .4;
+                text-align: center;
+                line-height: $width;
+                color: lighten($back-color, 35%);
+                background: lighten($back-color, 10%);
+                border: 5px solid darken($back-color, 10%);
+                text-shadow: 2px 2px 5px black;
+                -webkit-transition: 1.0s ease-in-out;
+
+                &:hover {
+                  background: darken($back-color, 40%);
+                  text-shadow: 0px 2px 10px lighten($back-color, 10%);
+                  }
+              }
+
+              // End Mixin 3
+              // Begin styling 3
+
+              .square-container-lg {
+                @include container-sq (400px, green)
+              }
+
+              .square-container-md {
+                @include container-sq (250px, blue)
+              }
+
+              .square-container-sm {
+                @include container-sq (150px, yellow)
+              }
+
             </xmp>
           </div>
         </div>
