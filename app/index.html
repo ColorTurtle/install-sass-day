@@ -51,14 +51,90 @@
         </code>
 
         <div class="hero-unit">
-          <div class = "cta-button-go">
-            Let's Do This!
+          <div class="mixin-demo">
+            <h3>Mixin</h3>
+            <div class = "cta-button-go">
+              Let's Do This!
+            </div>
+            <div class="cta-button-slow">
+              Still Thinkin'
+            </div>
+            <div class="cta-button-stop">
+              Cold Feet
+            </div>
           </div>
-          <div class="cta-button-go">
-            Still Thinkin'
+          <div class="code">
+            <h3>html</h3>
+            <xmp class = "html">
+              <div class = "cta-button-go">
+              Let's Do This!
+            </div>
+            <div class="cta-button-slow">
+              Still Thinkin'
+            </div>
+            <div class="cta-button-stop">
+              Cold Feet
+            </div>
+            </xmp>
           </div>
-          <div class="cta-button-go">
-            Cold Feet
+          <div class="code">
+            <h3>css</h3>
+            <xmp class = "css">
+              @mixin button-go ($width, $height, $background){
+  text-align: center;
+  border: 1px solid rgb(195, 143, 38);
+  width: $width;
+  height: $height;
+  position: relative;
+  color: white;
+  margin-bottom: 20px;
+  font-size: $height * .6;
+  line-height: $height;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  padding: $height *.3;
+  text-shadow: 0 1px 1px darken($background, 30%);
+  box-shadow: inset 0 1px 1px #fff,
+                    0 1px 3px gray;
+  background: $background; /* Old browsers */
+  @include background-image(linear-gradient(lighten($background, 10%), 
+  darken($background, 10%))); 
+
+  &:hover {
+    border: 1px solid rgb(195, 143, 38);
+    text-shadow: 0 1px 1px darken($background, 30%);
+    box-shadow: inset 0px 1px 1px #fff,
+                      0 1px 3px gray;
+    background: $background; /* Old browsers */
+  @include background-image(linear-gradient(darken($background, 10%), 
+  lighten($background, 10%))); 
+  }
+
+  &:active {
+    border: 1px solid rgb(195, 143, 38);
+    font-size: $height * .6 - 1px;
+    text-shadow: 0 1px 1px darken($background, 30%);
+    box-shadow: inset 0px 1px 1px #7B7474;
+    background: $background; /* Old browsers */
+  @include background-image(linear-gradient(darken($background, 10%), 
+  lighten($background, 10%))); 
+  }
+}
+
+
+.cta-button-go {
+  @include button-go (400px, 50px, green);
+}
+
+.cta-button-slow {
+  @include button-go (400px, 50px, yellow);
+}
+
+.cta-button-stop {
+  @include button-go (400px, 50px, red);
+}
+
+            </xmp>
           </div>
         </div>
 

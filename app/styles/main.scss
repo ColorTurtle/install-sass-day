@@ -1,6 +1,8 @@
+@import "compass/css3";
+
 $font-stack:    'Droid Serif', serif;
 $primary-color: #333;
-$highlight-color: FFCA2B;
+$highlight-color: #FFCA2B;
 
 body {
     background: #fafafa;
@@ -10,13 +12,12 @@ body {
 
 .hero-unit {
     margin: 50px auto 0 auto;
-    width: 700px;
+    width: 960px;
     font-size: 18px;
     font-weight: 200;
     line-height: 30px;
     background-color: #eee;
     border-radius: 6px;
-    padding: 60px;
     
     h1 {
         font-size: 60px;
@@ -25,6 +26,7 @@ body {
     }
 }
 
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -32,6 +34,17 @@ body {
     padding: 0.2em 0;
 }
 
+.mixin-demo {
+  padding: 10px 50px;
+  margin: 10px auto;
+}
+
+
+.code {
+  border: 4px solid red;
+  padding: 10px 50px;
+  margin: 10px;
+}
 
 
 // Example from Shane
@@ -49,67 +62,53 @@ body {
 
 // End example from Shane
 
-@mixin button-go ($width, $height){
+@mixin button-go ($width, $height, $background){
   text-align: center;
   border: 1px solid rgb(195, 143, 38);
   width: $width;
   height: $height;
   position: relative;
   color: white;
+  margin: 20px auto;
   font-size: $height * .6;
   line-height: $height;
   letter-spacing: 1px;
   border-radius: 6px;
   padding: $height *.3;
-  text-shadow: 0 1px 1px rgb(113, 86, 30);
+  text-shadow: 0 1px 1px darken($background, 30%);
   box-shadow: inset 0 1px 1px #fff,
                     0 1px 3px gray;
-  background: #fcd833; /* Old browsers */
-  background: -moz-linear-gradient(top, #fcd833 0%, #fca52e 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcd833), color-stop(100%,#fca52e)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #fcd833 0%,#fca52e 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #fcd833 0%,#fca52e 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #fcd833 0%,#fca52e 100%); /* IE10+ */
-  background: linear-gradient(to bottom, #fcd833 0%,#fca52e 100%); /* W3C */
-  
+  background: $background; /* Old browsers */
+  @include background-image(linear-gradient(lighten($background, 10%), darken($background, 10%))); 
 
   &:hover {
     border: 1px solid rgb(195, 143, 38);
-    text-shadow: 0 1px 1px rgb(113, 86, 30);
+    text-shadow: 0 1px 1px darken($background, 30%);
     box-shadow: inset 0px 1px 1px #fff,
                       0 1px 3px gray;
-    background: #fcd833; /* Old browsers */
-    background: -moz-linear-gradient(top, #fca52e 0%, #fcd833 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fca52e), color-stop(100%,#fcd833)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #fca52e 0%,#fcd833 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #fca52e 0%,#fcd833 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #fca52e 0%,#fcd833 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #fca52e 0%,#fcd833 100%); /* W3C */
+    background: $background; /* Old browsers */
+  @include background-image(linear-gradient(darken($background, 10%), lighten($background, 10%))); 
   }
 
   &:active {
     border: 1px solid rgb(195, 143, 38);
     font-size: $height * .6 - 1px;
-    text-shadow: 0 1px 1px rgb(113, 86, 30);
+    text-shadow: 0 1px 1px darken($background, 30%);
     box-shadow: inset 0px 1px 1px #7B7474;
-    background: #fcd833; /* Old browsers */
-    background: -moz-linear-gradient(top, #fca52e 0%, #fcd833 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fca52e), color-stop(100%,#fcd833)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #fca52e 0%,#fcd833 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #fca52e 0%,#fcd833 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #fca52e 0%,#fcd833 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #fca52e 0%,#fcd833 100%); /* W3C */
-
+    background: $background; /* Old browsers */
+  @include background-image(linear-gradient(darken($background, 10%), lighten($background, 10%))); 
   }
 }
-
 
 
 .cta-button-go {
-
-  .red {
-
-  }
-  @include button-go (600px, 120px);
+  @include button-go (400px, 50px, green);
 }
 
+.cta-button-slow {
+  @include button-go (400px, 50px, yellow);
+}
+
+.cta-button-stop {
+  @include button-go (400px, 50px, red);
+}
