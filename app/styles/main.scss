@@ -216,15 +216,15 @@ body {
 
 // Begin styling 2
 .circle-avatar-damascus {
-  @include avatar(url(/images/sillyface.jpg) no-repeat center)
+  @include avatar(url(images/sillyface.jpg) no-repeat center)
 }
 
 .circle-avatar-annie {
-  @include avatar(url(/images/annie.jpg) no-repeat center)
+  @include avatar(url(images/annie.jpg) no-repeat center)
 }
 
 .circle-avatar-rylee {
-  @include avatar(url(/images/rylee.jpg) no-repeat center)
+  @include avatar(url(images/rylee.jpg) no-repeat center)
 }
 
 // Begin styling 3
