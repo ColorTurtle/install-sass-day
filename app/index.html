@@ -41,23 +41,25 @@
               Cold Feet
             </div>
           </div>
+          <!-- Begin html code box -->
           <div class="code">
             <h3>html</h3>
-            <xmp class = "html">
-              <div class = "cta-button-go">
+            <pre>
+              &lt;div class = "cta-button-go">
               Let's Do This!
-            </div>
-            <div class="cta-button-slow">
+              &lt;/div>
+              &lt;div class="cta-button-slow">
               Still Thinkin'
-            </div>
-            <div class="cta-button-stop">
+              &lt;/div>
+              &lt;div class="cta-button-stop">
               Cold Feet
-            </div>
-            </xmp>
+              &lt;/div>
+            </pre>
           </div>
+          <!-- Begin css code box -->
           <div class="code">
             <h3>css</h3>
-            <xmp class = "css">
+            <pre><code class = "css">
               //Begin Mixin 1
               @mixin button-go ($width, $height, $background){
                 text-align: center;
@@ -117,7 +119,7 @@
                 @include button-go (400px, 50px, red);
               }
 
-            </xmp>
+            </code></pre>
           </div>
         </div>
 <!-- End Mixin 1 -->
@@ -144,35 +146,24 @@
               </div>
             </div>
           </div>
+          <!-- Begin html code box -->
           <div class="code">
             <h3>html</h3>
-            <xmp class ="html">
-              <div class="circle-avatar-damascus avatar-item">
-              <div class="avatar-info">
-                <h3>Damascus</h3>
-                <p>Amazing kid.<br>Part-time secret agent/karate ninja.
-                Loves legos.</p>
-              </div>
-            </div>
-            <div class="circle-avatar-annie avatar-item">
-              <div class="avatar-info">
-                <h3>Annie</h3>
-                <p>aka: Sprinkles.<br>Loves candy, giggling &amp; 
-                being her own boss.</p>
-              </div>
-            </div>
-            <div class="circle-avatar-rylee avatar-item">
-              <div class="avatar-info">
-                <h3>Rylee</h3>
-                <p>Likes to light up rooms... with her smile.<br>
-                Also cray-cray.<br>Toads.</p>
-              </div>
-            </div>
-            </xmp>
+            <pre>
+              &lt;div class="circle-avatar-damascus avatar-item">
+                &lt;div class="avatar-info">
+                  &lt;h3> Damascus &lt;/h3>
+                  &lt;p>Amazing kid.
+                  &lt;br>Part-time secret agent/karate ninja.
+                  Loves legos.&lt;/p>
+                &lt;/div>
+              &lt;/div>
+            </pre>
           </div>
+          <!-- Begin css code box -->
           <div class="code">
             <h3>css</h3>
-            <xmp class="css">
+            <pre class="css">
             // Begin Mixin 2
             @mixin avatar($image) {
               background: $image; 
@@ -201,7 +192,7 @@
             .circle-avatar-rylee {
               @include avatar(url(img/rylee.jpg)no-repeat center center)
             }
-            </xmp>
+            </pre>
           </div>
         </div>
 <!-- End Mixin 2 -->
@@ -219,24 +210,26 @@
               <span>Sm</span>
             </div>
           </div>
+          <!-- Begin html code box -->
           <div class="code">
             <h3>html</h3>
-            <xmp class ="html">
-            <h3>Mixin 3</h3>
-            <div class="square-container-lg">
-              <span>Lg</span>
-            </div>
-            <div class="square-container-md">
-              <span>Med</span>
-            </div>
-            <div class="square-container-sm">
-              <span>Sm</span>
-            </div>
-            </xmp>
+            <pre class ="html">
+            &lt;h3>Mixin 3 /h3>
+            &lt;div class="square-container-lg">
+              &lt;span> Lg &lt;/span>
+            &lt;/div>
+            &lt;div class="square-container-md">
+              &lt;span>Med&lt;/span>
+            &lt;/div>
+            &lt;div class="square-container-sm">
+              &lt;span>Sm&lt;/span>
+            &lt;/div>
+            </pre>
           </div>
+          <!-- Begin css code box -->
           <div class="code">
             <h3>css</h3>
-            <xmp class="css">
+            <pre class="css">
               // Begin Mixin 3
               @mixin container-sq ($width, $back-color) {
                 width: $width;
@@ -272,7 +265,7 @@
                 @include container-sq (150px, yellow)
               }
 
-            </xmp>
+            </pre>
           </div>
         </div>
         <div class = "peace-out">
